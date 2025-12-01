@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian Chiosso | Backend & Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="noise-overlay"></div>
+    <div id="canvas-container"></div>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo" data-hover>JC.</a>
+            <div class="nav-links">
+                <a href="#home" data-hover>Inicio</a>
+                <a href="#about" data-hover>Sobre Mí</a>
+                <a href="#skills" data-hover>Habilidades</a>
+                <a href="#projects" data-hover>Proyectos</a>
+                <a href="#contact" data-hover>Contacto</a>
+            </div>
+            <button class="menu-btn" data-hover><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. INICIO (HERO) -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <p class="hero-subtitle reveal-text">Backend-Focused Full-Stack Developer</p>
+                <h1 class="hero-title">
+                    <span class="reveal-text">JULIAN</span><br>
+                    <span class="reveal-text">CHIOSSO</span>
+                </h1>
+                <div class="hero-bio reveal-text delay-1">
+                    <p>Especialista en arquitecturas robustas y escalables con .NET y Node.js. Integrando Inteligencia
+                        Artificial para el futuro del software.</p>
+                </div>
+                <div class="hero-actions reveal-text delay-2">
+                    <a href="#projects" class="btn-primary" data-hover>Ver Proyectos</a>
+                    <a href="#contact" class="btn-secondary" data-hover>Contactar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SOBRE MÍ -->
+        <section id="about" class="about section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title reveal-text">01. Sobre Mí</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image-container zoom-blur">
+                        <div class="about-image-wrapper">
+                            <img src="Assets/profile.jpg" alt="Julian Chiosso" class="about-image">
+                        </div>
+                    </div>
+                    <div class="about-content-wrapper">
+                        <div class="about-text fade-up">
+                            <p class="lead">Estudiante avanzado de Programación en UTN San Francisco, enfocado en crear
+                                soluciones de alto impacto.</p>
+                            <p>Mi perfil es fuertemente <strong>Backend</strong>, dominando tecnologías como <strong>C#,
+                                    .NET, ASP.NET Core y NestJS</strong>. Sin embargo, mi visión integral me permite
+                                desenvolverme con soltura en el Frontend utilizando Vue.js y TailwindCSS.</p>
+                            <p>Me apasiona el diseño de <strong>APIs REST</strong>, arquitecturas modulares y la
+                                integración de <strong>Inteligencia Artificial</strong> para optimizar procesos. Busco
+                                desafíos reales donde pueda aportar proactividad y código de calidad.</p>
+                        </div>
+                        <div class="about-cards slide-fade delay-2">
+                            <div class="info-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Formación</h3>
+                                <p>UTN San Francisco</p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-brain"></i>
+                                <h3>Enfoque</h3>
+                                <p>Backend & IA</p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Actitud</h3>
+                                <p>Proactivo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HABILIDADES -->
+        <section id="skills" class="skills section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title reveal-text">02. Habilidades</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category bounce-in delay-1">
+                        <h3><i class="fas fa-server"></i> Backend Core</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag" data-hover>C#</span>
+                            <span class="skill-tag" data-hover>.NET</span>
+                            <span class="skill-tag" data-hover>ASP.NET Core</span>
+                            <span class="skill-tag" data-hover>NestJS</span>
+                            <span class="skill-tag" data-hover>TypeScript</span>
+                            <span class="skill-tag" data-hover>Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-category bounce-in delay-3">
+                        <h3><i class="fas fa-database"></i> Datos & Cloud</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag" data-hover>SQL Server</span>
+                            <span class="skill-tag" data-hover>PostgreSQL</span>
+                            <span class="skill-tag" data-hover>MongoDB</span>
+                            <span class="skill-tag" data-hover>AWS</span>
+                            <span class="skill-tag" data-hover>MySQL</span>
+                            <span class="skill-tag" data-hover>JWT Auth</span>
+                        </div>
+                    </div>
+                    <div class="skill-category bounce-in delay-5">
+                        <h3><i class="fas fa-code"></i> Frontend & Herramientas</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag" data-hover>JavaScript</span>
+                            <span class="skill-tag" data-hover>Vue.js</span>
+                            <span class="skill-tag" data-hover>React.js</span>
+                            <span class="skill-tag" data-hover>TailwindCSS</span>
+                            <span class="skill-tag" data-hover>Git / GitHub</span>
+                            <span class="skill-tag" data-hover>Jest Testing</span>
+                            <span class="skill-tag" data-hover>Integración IA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROYECTOS -->
+        <section id="projects" class="work section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title reveal-text">03. Proyectos</h2>
+                </div>
+                <div class="work-list">
+                    <!-- Project 1 -->
+                    <article class="work-item fade-up">
+                        <div class="work-info">
+                            <span class="work-cat">Fintech / Blockchain</span>
+                            <h3 class="work-title" data-hover>Billetera Crypto</h3>
+                            <p class="work-desc">Plataforma segura para gestión de activos digitales. Backend robusto en
+                                .NET con integración de blockchain en tiempo real y seguridad JWT.</p>
+                            <div class="work-tech">
+                                <span>Vue.js</span><span>.NET</span><span>SQL Server</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="btn-link" data-hover>Ver Demo <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-link" data-hover>GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-image" data-hover>
+                            <div class="img-placeholder gradient-1">
+                                <i class="fas fa-wallet icon-bg"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="work-item fade-up delay-2">
+                        <div class="work-info">
+                            <span class="work-cat">App Móvil / Sistemas Distribuidos</span>
+                            <h3 class="work-title" data-hover>RappiApp Clone</h3>
+                            <p class="work-desc">Sistema complejo de delivery con geolocalización. Arquitectura de
+                                microservicios utilizando NestJS y MongoDB para alta escalabilidad.</p>
+                            <div class="work-tech">
+                                <span>NestJS</span><span>PostgreSQL</span><span>Vue.js</span><span>JWT</span><span>Jest</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="btn-link" data-hover>Ver Demo <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-link" data-hover>GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-image" data-hover>
+                            <div class="img-placeholder gradient-2">
+                                <i class="fas fa-motorcycle icon-bg"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="work-item fade-up delay-4">
+                        <div class="work-info">
+                            <span class="work-cat">Software de Escritorio / Gestión</span>
+                            <h3 class="work-title" data-hover>Gestión Stock Essen</h3>
+                            <p class="work-desc">Aplicación de escritorio optimizada para el control de inventario y
+                                ventas. Automatización de reportes y control de stock en tiempo real.</p>
+                            <div class="work-tech">
+                                <span>.NET Windows Forms</span><span>MongoDB</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="#" class="btn-link" data-hover>Ver Caso <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-image" data-hover>
+                            <div class="img-placeholder gradient-3">
+                                <i class="fas fa-boxes icon-bg"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACTO -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-wrapper fade-up">
+                    <p class="contact-subtitle">¿Listo para innovar?</p>
+                    <h2 class="contact-title">Hablemos</h2>
+                    <p class="contact-desc">Busco integrarme a equipos que desafíen los límites. Si tienes un
+                        proyecto
+                        ambicioso, tengo la arquitectura para soportarlo.</p>
+
+                    <div class="contact-actions">
+                        <a href="mailto:contacto@julianchiosso.com" class="btn-large" data-hover>Iniciar
+                            Conversación</a>
+                        <a target="_blank" href="Docs/Curriculum Vitae - Chiosso Julián.pdf" download="Julian-Chiosso-CV.pdf" class="btn-cv"
+                            data-hover>
+                            <i class="fas fa-download"></i> Descargar CV Completo
+                        </a>
+                    </div>
+
+                    <p class="cv-note">Disponible para contratación inmediata. Full Stack / Backend.</p>
+                </div>
+                <footer class="footer">
+                    <div class="socials">
+                        <a target="_blank" href="https://github.com/julichiosso" data-hover><i class="fab fa-github"></i> GitHub</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/julián-chiosso-33210b332/" data-hover><i
+                                class="fab fa-linkedin"></i>
+                            LinkedIn</a>
+                        <a target="_blank" href="mailto:chiossojulian@gmail.com?subject=Contacto%20desde%20tu%20Portfolio&body=Hola%20Julian,%20quiero%20ponerme%20en%20contacto."
+                            data-hover>
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                    <p class="copyright">© 2025 Julian Chiosso | Desarrollador Web</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
