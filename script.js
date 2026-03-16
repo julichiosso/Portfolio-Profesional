@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             prj2_cat: "Enterprise / Gestión Industrial", prj2_title: "Gestión de Devoluciones — WEG", prj2_desc: "Sistema web empresarial para WEG Equipamientos Electrónicos S.A., orientado a la gestión integral de devoluciones de productos.",
             prj3_cat: "SaaS / Soporte Técnico", prj3_title: "Sistema de Tickets — Soporte",
             prj3_desc: "Aplicación Full Stack bajo principios de Clean Architecture. Gestión integral de tickets con roles (Admin, Operador, Usuario). Incluye chat en tiempo real integrado para soporte directo, trazabilidad de SLA y una API REST robusta. Arquitectura desacoplada en capas (Domain, Application, Infrastructure, API).",
-            prj_see_demo: "Ver Demo", prj_see_case: "Ver Caso", prj_see_live: "Ver Demo en Vivo", gallery_hint: "Deslizar",
+            prj_see_demo: "Ver Demo", prj_see_case: "Ver Caso", prj_see_live: "Ver Demo", gallery_hint: "Deslizar",
             contact_subtitle: "¿Listo para innovar?", contact_title: "Hablemos", contact_desc: "Busco integrarme a equipos que desafíen los límites. Si tenés un proyecto ambicioso, tengo la arquitectura para soportarlo.",
             contact_btn: "Iniciar Conversación", contact_cv: "Descargar CV", contact_note: "Disponible para contratación inmediata · Full Stack / Backend",
             footer_dev: "Desarrollador Web"
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             prj2_cat: "Enterprise / Industrial Management", prj2_title: "Return Management — WEG", prj2_desc: "Enterprise web system for WEG S.A., focused on comprehensive product return management. Automated approval flow and tracking.",
             prj3_cat: "SaaS / Tech Support", prj3_title: "Ticket System — Support",
             prj3_desc: "Full Stack application following Clean Architecture principles. Comprehensive ticket management with roles (Admin, Operator, User). Features integrated real-time chat for direct support, SLA tracking, and a robust REST API. Layered architecture (Domain, Application, Infrastructure, API).",
-            prj_see_demo: "View Demo", prj_see_case: "View Case", prj_see_live: "Watch Live Demo", gallery_hint: "Swipe",
+            prj_see_demo: "View Demo", prj_see_case: "View Case", prj_see_live: "View Demo", gallery_hint: "Swipe",
             contact_subtitle: "Ready to innovate?", contact_title: "Let's Talk", contact_desc: "I'm looking to join teams that push the boundaries. If you have an ambitious project, I have the architecture to support it.",
             contact_btn: "Start Conversation", contact_cv: "Download CV", contact_note: "Available for immediate hire · Full Stack / Backend",
             footer_dev: "Web Developer"
