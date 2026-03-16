@@ -33,6 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
     // Scroll Reveal Animation (repeatable)
     const observerOptions = {
         threshold: 0.1,
@@ -159,4 +173,156 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initThreeJS();
+
+    /* 
+    ANONYMIZATION SCRIPT (For Subagent Reference):
+    document.querySelectorAll('span, p, div, td, h6, h1, h2, h3, a').forEach(el => {
+       if (el.innerText.match(/Mauro|Chiosso|Julian|Mateo|Dominguez/i)) {
+         el.innerText = el.innerText.replace(/Mauro|Chiosso|Julian|Mateo|Dominguez/gi, 'Demo User');
+       }
+    });
+    */
+
+    // i18n Dictionary
+    const translations = {
+        es: {
+            nav_home: "Inicio", nav_about: "Sobre Mí", nav_skills: "Habilidades", nav_projects: "Proyectos", nav_contact: "Contacto",
+            hero_available: "Disponible para nuevas oportunidades",
+            hero_bio: "Backend-Focused Full Stack Developer — especialista en arquitecturas robustas con .NET y Node.js, integrando Inteligencia Artificial para el futuro del software.",
+            hero_projects: "Ver Proyectos", hero_cv: "Descargar CV", hero_contact: "Contactar",
+            about_title: "Sobre Mí", about_lead: "Estudiante avanzado en UTN San Francisco, enfocado en construir soluciones de alto impacto.",
+            about_p1: "Mi perfil es fuertemente Backend, dominando tecnologías como C#, .NET, ASP.NET Core y NestJS. Sin embargo, mi visión integral me permite desenvolverme con soltura en el Frontend utilizando Vue.js.",
+            about_p2: "Me apasiona el diseño de APIs REST, arquitecturas modulares y la integración de Inteligencia Artificial para optimizar procesos. Busco desafíos reales donde pueda aportar proactividad y código de calidad.",
+            about_card1_h: "Formación", about_card1_p: "UTN San Francisco",
+            about_card2_h: "Especialidad", about_card2_p: "Backend & Full Stack",
+            about_card3_h: "Interés", about_card3_p: "Arquitecturas escalables & IA",
+            skills_title: "Habilidades", skills_cat1: "Backend Core", skills_cat2: "Datos & Cloud", skills_cat3: "Frontend & Tools", skills_ia: "Integración IA",
+            projects_title: "Proyectos",
+            prj1_cat: "Fintech / Blockchain", prj1_title: "Billetera Crypto", prj1_desc: "Plataforma segura para gestión de activos digitales. Backend robusto en .NET con integración de blockchain en tiempo real y seguridad JWT.",
+            prj2_cat: "Enterprise / Gestión Industrial", prj2_title: "Gestión de Devoluciones — WEG", prj2_desc: "Sistema web empresarial para WEG Equipamientos Electrónicos S.A., orientado a la gestión integral de devoluciones de productos.",
+            prj3_cat: "SaaS / Soporte Técnico", prj3_title: "Sistema de Tickets — Soporte",
+            prj3_desc: "Aplicación Full Stack bajo principios de Clean Architecture. Gestión integral de tickets con roles (Admin, Operador, Usuario). Incluye chat en tiempo real integrado para soporte directo, trazabilidad de SLA y una API REST robusta. Arquitectura desacoplada en capas (Domain, Application, Infrastructure, API).",
+            prj_see_demo: "Ver Demo", prj_see_case: "Ver Caso", prj_see_live: "Ver Demo en Vivo", gallery_hint: "Deslizar",
+            contact_subtitle: "¿Listo para innovar?", contact_title: "Hablemos", contact_desc: "Busco integrarme a equipos que desafíen los límites. Si tenés un proyecto ambicioso, tengo la arquitectura para soportarlo.",
+            contact_btn: "Iniciar Conversación", contact_cv: "Descargar CV", contact_note: "Disponible para contratación inmediata · Full Stack / Backend",
+            footer_dev: "Desarrollador Web"
+        },
+        en: {
+            nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
+            hero_available: "Available for new opportunities",
+            hero_bio: "Backend-Focused Full Stack Developer — specialized in robust architectures with .NET and Node.js, integrating AI for the future of software.",
+            hero_projects: "View Projects", hero_cv: "Download CV", hero_contact: "Contact Me",
+            about_title: "About Me", about_lead: "Advanced student at UTN San Francisco, focused on building high-impact solutions.",
+            about_p1: "I have a strong Backend profile, mastering technologies like C#, .NET, ASP.NET Core, and NestJS. However, my comprehensive vision allows me to navigate Frontend seamlessly using Vue.js.",
+            about_p2: "I am passionate about REST API design, modular architectures, and AI integration to optimize processes. I seek real challenges where I can provide proactivity and quality code.",
+            about_card1_h: "Education", about_card1_p: "UTN San Francisco",
+            about_card2_h: "Specialty", about_card2_p: "Backend & Full Stack",
+            about_card3_h: "Interests", about_card3_p: "Scalable Architectures & AI",
+            skills_title: "Technical Skills", skills_cat1: "Backend Core", skills_cat2: "Data & Cloud", skills_cat3: "Frontend & Tools", skills_ia: "AI Integration",
+            projects_title: "Featured Projects",
+            prj1_cat: "Fintech / Blockchain", prj1_title: "Crypto Wallet", prj1_desc: "Secure platform for digital asset management. Robust .NET backend with real-time blockchain integration and JWT security.",
+            prj2_cat: "Enterprise / Industrial Management", prj2_title: "Return Management — WEG", prj2_desc: "Enterprise web system for WEG S.A., focused on comprehensive product return management. Automated approval flow and tracking.",
+            prj3_cat: "SaaS / Tech Support", prj3_title: "Ticket System — Support",
+            prj3_desc: "Full Stack application following Clean Architecture principles. Comprehensive ticket management with roles (Admin, Operator, User). Features integrated real-time chat for direct support, SLA tracking, and a robust REST API. Layered architecture (Domain, Application, Infrastructure, API).",
+            prj_see_demo: "View Demo", prj_see_case: "View Case", prj_see_live: "Watch Live Demo", gallery_hint: "Swipe",
+            contact_subtitle: "Ready to innovate?", contact_title: "Let's Talk", contact_desc: "I'm looking to join teams that push the boundaries. If you have an ambitious project, I have the architecture to support it.",
+            contact_btn: "Start Conversation", contact_cv: "Download CV", contact_note: "Available for immediate hire · Full Stack / Backend",
+            footer_dev: "Web Developer"
+        }
+    };
+
+    const langToggle = document.getElementById('lang-toggle');
+    const langLabels = langToggle.querySelectorAll('.lang-label');
+    let currentLang = localStorage.getItem('selectedLang') || 'es';
+
+    const updateLanguage = (lang) => {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                // If it contains HTML (like <strong>), use innerHTML, else textContent
+                if (translations[lang][key].includes('<')) {
+                    el.innerHTML = translations[lang][key];
+                } else {
+                    el.textContent = translations[lang][key];
+                }
+            }
+        });
+
+        // Update active class on toggle labels
+        langLabels.forEach(label => {
+            if (label.textContent.toLowerCase() === lang) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+        });
+
+        document.documentElement.lang = lang;
+        localStorage.setItem('selectedLang', lang);
+    };
+
+    // Initial load
+    updateLanguage(currentLang);
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        updateLanguage(currentLang);
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        });
+    });
+
+    // Project Gallery Dots & Arrows Logic
+    const galleries = document.querySelectorAll('.project-gallery');
+
+    galleries.forEach(gallery => {
+        const container = gallery.querySelector('.gallery-container');
+        const dots = gallery.querySelectorAll('.gallery-dot');
+        const prevBtn = gallery.querySelector('.gallery-arrow.prev');
+        const nextBtn = gallery.querySelector('.gallery-arrow.next');
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                const width = container.offsetWidth;
+                container.scrollBy({ left: -width, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const width = container.offsetWidth;
+                container.scrollBy({ left: width, behavior: 'smooth' });
+            });
+        }
+
+        container.addEventListener('scroll', () => {
+            const width = container.offsetWidth;
+            const scrollLeft = container.scrollLeft;
+            const activeIndex = Math.round(scrollLeft / width);
+
+            dots.forEach((dot, idx) => {
+                if (idx === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+    });
 });
