@@ -26,18 +26,44 @@
 }
 
 [data-theme="dark"] {
-    --bg: #0f172a;
-    --bg-card: #1e293b;
-    --bg-subtle: #1e293b;
-    --text: #f1f5f9;
-    --text-muted: #cbd5e1;
+    --bg: #0b0f1a;
+    /* Deeper, more professional dark blue/black */
+    --bg-card: #151b2d;
+    --bg-subtle: #1a2236;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
     --text-light: #64748b;
     --accent: #3b82f6;
-    --border: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(59, 130, 246, 0.4);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+    /* Solid professional blue */
+    --accent-2: #6366f1;
+    --accent-light: rgba(59, 130, 246, 0.1);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(59, 130, 246, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* CV Style Section Headers */
+.section-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+}
+
+.section-label {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* ---- Reset ---- */
@@ -624,6 +650,74 @@ body::after {
 }
 
 /* ============================================
+   TIMELINE (Education & Certs)
+   ============================================ */
+
+.timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-top: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    z-index: 1;
+}
+
+.timeline-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-subtitle {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ============================================
    SKILLS
    ============================================ */
 
@@ -727,6 +821,12 @@ body::after {
     /* Extremely soft neutral shadow */
     transition: all var(--transition);
     overflow: hidden;
+}
+
+[data-theme="dark"] .work-item {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-md);
 }
 
 /* Feature Project (Vertical / Stacked) - Disabled for mini-preview preference */
@@ -1358,6 +1458,10 @@ body::after {
     }
 
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education .about-grid {
         grid-template-columns: 1fr;
     }
 }

@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', savedTheme);
+    localStorage.setItem('theme', savedTheme); // Persist the default choice
 
     themeToggle.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
@@ -186,11 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // i18n Dictionary
     const translations = {
         es: {
-            nav_home: "Inicio", nav_about: "Sobre Mí", nav_skills: "Habilidades", nav_projects: "Proyectos", nav_contact: "Contacto",
+            nav_home: "Inicio", nav_about: "Sobre Mí", nav_skills: "Habilidades", nav_projects: "Proyectos", nav_edu: "Educación", nav_contact: "Contacto",
             hero_available: "Disponible para nuevas oportunidades",
-            hero_bio: "Backend & Full Stack Developer con más de 3 años construyendo software real.",
+            hero_bio: "Backend Developer con más de 3 años construyendo software real.",
             hero_projects: "Ver Proyectos", hero_cv: "Descargar CV", hero_contact: "Contactar",
-            about_title: "Sobre Mí", about_lead: "Desarrollador Backend & Full Stack con más de 3 años de experiencia construyendo sistemas que ya funcionan en producción.",
+            about_title: "Sobre Mí", about_lead: "Desarrollador Backend con más de 3 años de experiencia construyendo sistemas que ya funcionan en producción.",
             about_p1: "Mi especialidad es el backend con <strong>C#, .NET y NestJS</strong>, diseñando APIs REST y arquitecturas modulares que escalan. En el frontend trabajo con <strong>Vue.js y TypeScript</strong> cuando el proyecto lo requiere.",
             about_p2: "Construí un <strong>sistema de gestión para WEG Equipamientos Electrónicos</strong> y una plataforma completa de soporte técnico con chat en tiempo real, métricas y control de SLA. Dos proyectos reales, deployed, listos para producción.",
             about_card1_h: "Formación", about_card1_p: "Téc. en Programación · UTN",
@@ -198,6 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
             about_card3_h: "Interés", about_card3_p: "Inteligencia Artificial · Aq. Escalares",
             skills_title: "Habilidades", skills_cat1: "Backend Core", skills_cat2: "Datos & Cloud", skills_cat3: "Frontend & Tools", skills_ia: "Integración IA",
             projects_title: "Proyectos",
+            edu_title: "Educación & Certificaciones",
+            edu_desc1: "Formación técnica enfocada en desarrollo de software, arquitectura de sistemas y bases de datos.",
             prj2_cat: "Enterprise / Gestión Industrial", prj2_title: "Gestión de Devoluciones — WEG", prj2_desc: "Plataforma industrial para <strong>WEG S.A.</strong> que digitaliza y optimiza el ciclo de vida de las devoluciones. Integra flujos de aprobación complejos, trazabilidad en tiempo real y dashboards analíticos. <em>Software crítico en producción.</em>",
             prj3_cat: "SaaS / Soporte Técnico", prj3_title: "Sistema de Tickets — Soporte",
             prj3_desc: "Plataforma B2B de alto rendimiento construida bajo <strong>Clean Architecture</strong>. Implementa micro-interacciones en tiempo real con SignalR, seguridad JWT basada en roles y una capa de persistencia optimizada con EF Core. Resolución de SLAs y arquitectura modular escalable para el sector corporativo.",
@@ -207,11 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_dev: "Desarrollador Web"
         },
         en: {
-            nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
+            nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_edu: "Education", nav_contact: "Contact",
             hero_available: "Available for new opportunities",
-            hero_bio: "Backend & Full Stack Developer with over 3 years building real software.",
+            hero_bio: "Backend Developer with over 3 years building real software.",
             hero_projects: "View Projects", hero_cv: "Download CV", hero_contact: "Contact Me",
-            about_title: "About Me", about_lead: "Backend & Full Stack Developer with over 3 years of experience building systems currently in production.",
+            about_title: "About Me", about_lead: "Backend Developer with over 3 years of experience building systems currently in production.",
             about_p1: "My specialty is backend development with <strong>C#, .NET, and NestJS</strong>, designing REST APIs and modular architectures that scale. On the frontend, I work with <strong>Vue.js and TypeScript</strong> when the project requires it.",
             about_p2: "I built a <strong>management system for WEG Equipamientos Electrónicos</strong> and a complete technical support platform with real-time chat, metrics, and SLA control. Two real projects, deployed, ready for production.",
             about_card1_h: "Education", about_card1_p: "Programming Technician · UTN",
@@ -219,6 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
             about_card3_h: "Interests", about_card3_p: "Artificial Intelligence · Scalability",
             skills_title: "Technical Skills", skills_cat1: "Backend Core", skills_cat2: "Data & Cloud", skills_cat3: "Frontend & Tools", skills_ia: "AI Integration",
             projects_title: "Featured Projects",
+            edu_title: "Education & Certifications",
+            edu_desc1: "Technical training focused on software development, systems architecture, and databases.",
             prj2_cat: "Enterprise / Industrial Management", prj2_title: "Return Management — WEG", prj2_desc: "Industrial management platform for <strong>WEG S.A.</strong> that digitizes and optimizes the return lifecycle. It integrates complex approval workflows, real-time traceability, and analytical dashboards. <em>Critical production software.</em>",
             prj3_cat: "SaaS / Tech Support", prj3_title: "Ticket System — Support",
             prj3_desc: "High-performance B2B platform built following <strong>Clean Architecture</strong> principles. It features real-time micro-interactions via SignalR, role-based JWT security, and an optimized persistence layer with EF Core. Focused on SLA resolution and scalable modular architecture for the enterprise sector.",
