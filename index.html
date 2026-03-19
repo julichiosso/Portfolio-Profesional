@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Chiosso | Backend &amp; Full Stack Developer</title>
     <meta name="description"
-        content="Portfolio de Julian Chiosso — Backend-Focused Full Stack Developer especializado en .NET, ASP.NET Core, NestJS y Vue.js. Disponible para contratación.">
+        content="Portfolio de Julian Chiosso — Backend & Full Stack Developer con más de 3 años de experiencia. Especializado en .NET, ASP.NET Core, NestJS y Vue.js. Disponible para contratación.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,28 +53,32 @@
         <!-- 1. HERO -->
         <section id="home" class="hero">
             <div class="container hero-content">
-                <p class="hero-subtitle reveal-text" data-i18n="hero_available">Disponible para nuevas oportunidades</p>
+                <!-- CAMBIO: badge de disponibilidad con ubicación -->
+                <p class="hero-subtitle reveal-text" data-i18n="hero_available">Disponible · Remoto o presencial · San
+                    Francisco, AR</p>
                 <h1 class="hero-title">
                     <span class="reveal-text">JULIAN</span><br>
                     <span class="reveal-text delay-1">CHIOSSO</span>
                 </h1>
-                <p class="hero-bio reveal-text delay-2" data-i18n="hero_bio">Backend-Focused Full Stack Developer —
-                    especialista en arquitecturas robustas con .NET y Node.js, integrando Inteligencia Artificial para
-                    el futuro del software.</p>
+                <!-- CAMBIO: tagline directo, sin "estudiante", sin claim vacío de IA -->
+                <p class="hero-bio reveal-text delay-2" data-i18n="hero_bio">Backend &amp; Full Stack Developer
+                    con más de 3 años construyendo software real.</p>
                 <div class="hero-stack reveal-text delay-2">
+                    <!-- CAMBIO: sacado "IA Integration" — no tiene proyecto que lo demuestre -->
                     <span class="stack-pill">.NET / C#</span>
                     <span class="stack-pill">ASP.NET Core</span>
                     <span class="stack-pill">NestJS</span>
                     <span class="stack-pill">Vue.js</span>
                     <span class="stack-pill">TypeScript</span>
-                    <span class="stack-pill">IA Integration</span>
+                    <span class="stack-pill">SQL Server</span>
+                    <span class="stack-pill">IA / ML</span>
                 </div>
                 <div class="hero-actions reveal-text delay-3">
                     <a href="#projects" class="btn-primary" data-hover>
                         <span data-i18n="hero_projects">Ver Proyectos</span> <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#" class="btn-secondary" data-hover>
-                        <i class="fas fa-file-download mr-8"></i> <span data-i18n="hero_cv">Descargar CV</span>
+                    <a href="https://github.com/julichiosso" target="_blank" class="btn-secondary" data-hover>
+                        <i class="fab fa-github mr-8"></i> <span data-i18n="hero_github">GitHub</span>
                     </a>
                 </div>
             </div>
@@ -102,11 +106,11 @@
                     </div>
                     <div class="stack-item reveal-text delay-3" data-hover>
                         <i class="fas fa-database stack-icon"></i>
-                        <span class="stack-name">PostgreSQL / SQL</span>
+                        <span class="stack-name">SQL Server / PostgreSQL</span>
                     </div>
                     <div class="stack-item reveal-text delay-4" data-hover>
-                        <i class="fas fa-brain stack-icon"></i>
-                        <span class="stack-name">AI & Automation</span>
+                        <i class="fas fa-shield-alt stack-icon"></i>
+                        <span class="stack-name">Clean Architecture</span>
                     </div>
                 </div>
             </div>
@@ -127,23 +131,29 @@
                     </div>
                     <div class="about-content-wrapper">
                         <div class="about-text fade-up">
-                            <p class="lead" data-i18n="about_lead">Estudiante avanzado en UTN San Francisco, enfocado en
-                                construir soluciones de alto impacto.</p>
-                            <p data-i18n="about_p1">Mi perfil es fuertemente <strong>Backend</strong>, dominando
-                                tecnologías como <strong>C#, .NET, ASP.NET Core y NestJS</strong>. Sin embargo, mi
-                                visión integral me permite desenvolverme con soltura en el Frontend utilizando Vue.js.
-                            </p>
-                            <p data-i18n="about_p2">Me apasiona el diseño de <strong>APIs REST</strong>, arquitecturas
-                                modulares y la integración de <strong>Inteligencia Artificial</strong> para optimizar
-                                procesos. Busco desafíos reales donde pueda aportar proactividad y código de calidad.
-                            </p>
+                            <!-- CAMBIO: eliminado "estudiante" como identidad principal -->
+                            <p class="lead" data-i18n="about_lead">Desarrollador Backend &amp; Full Stack con más de 3
+                                años de experiencia construyendo sistemas que ya funcionan en producción.</p>
+                            <p data-i18n="about_p1">Mi especialidad es el backend con <strong>C#, .NET y
+                                    NestJS</strong>, diseñando APIs REST y arquitecturas modulares que escalan. En el
+                                frontend trabajo con <strong>Vue.js y TypeScript</strong> cuando el proyecto lo
+                                requiere.</p>
+                            <!-- CAMBIO: párrafo que menciona proyectos reales como credencial central -->
+                            <p data-i18n="about_p2">Construí un <strong>sistema de gestión para WEG Equipamientos
+                                    Electrónicos</strong> y una plataforma completa de soporte técnico con chat en
+                                tiempo real, métricas y control de SLA. Dos proyectos reales, deployed, listos para
+                                producción.</p>
+                            <!-- CAMBIO: párrafo honesto sobre búsqueda laboral -->
+                            <p data-i18n="about_p3">Busco mi primer rol profesional como desarrollador en un equipo
+                                donde pueda seguir creciendo y resolver problemas reales.</p>
                         </div>
                         <div class="about-cards slide-fade delay-2">
                             <div class="info-card">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div>
+                                    <!-- CAMBIO: formación más específica -->
                                     <h3 data-i18n="about_card1_h">Formación</h3>
-                                    <p data-i18n="about_card1_p">UTN San Francisco</p>
+                                    <p data-i18n="about_card1_p">Téc. en Programación · UTN</p>
                                 </div>
                             </div>
                             <div class="info-card">
@@ -154,10 +164,11 @@
                                 </div>
                             </div>
                             <div class="info-card">
-                                <i class="fas fa-brain"></i>
+                                <i class="fas fa-rocket"></i>
                                 <div>
+                                    <!-- CAMBIO: interés más concreto y vendible -->
                                     <h3 data-i18n="about_card3_h">Interés</h3>
-                                    <p data-i18n="about_card3_p">Arquitecturas escalables &amp; IA</p>
+                                    <p data-i18n="about_card3_p">Inteligencia Artificial · Aq. Escalares</p>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +216,6 @@
                             <span class="skill-tag" data-hover>TailwindCSS</span>
                             <span class="skill-tag" data-hover>Git / GitHub</span>
                             <span class="skill-tag" data-hover>Jest</span>
-                            <span class="skill-tag" data-hover data-i18n="skills_ia">Integración IA</span>
                         </div>
                     </div>
                 </div>
@@ -220,15 +230,17 @@
                     <h2 class="section-title reveal-text" data-i18n="projects_title">Proyectos</h2>
                 </div>
                 <div class="work-list">
-                    <!-- Project 2 -->
+
+                    <!-- Project WEG -->
                     <article class="work-item fade-up delay-2">
                         <div class="work-info">
                             <span class="work-cat" data-i18n="prj2_cat">Enterprise / Gestión Industrial</span>
                             <h3 class="work-title" data-hover data-i18n="prj2_title">Gestión de Devoluciones — WEG</h3>
-                            <p class="work-desc" data-i18n="prj2_desc">Sistema web empresarial para WEG Equipamientos
-                                Electrónicos S.A., orientado a la gestión integral de devoluciones de productos.
-                                Automatización del flujo de aprobación, trazabilidad de estados y generación de reportes
-                                internos.</p>
+                            <!-- CAMBIO: descripción reescrita con contexto real y "en producción" -->
+                            <p class="work-desc" data-i18n="prj2_desc">Plataforma industrial para <strong>WEG
+                                    S.A.</strong> que digitaliza y optimiza el ciclo de vida de las devoluciones.
+                                Integra flujos de aprobación complejos, trazabilidad en tiempo real y dashboards
+                                analíticos. <em>Software crítico en producción.</em></p>
                             <div class="work-tech">
                                 <span><i class="fab fa-microsoft"></i> .NET</span>
                                 <span><i class="fas fa-database"></i> SQL Server</span>
@@ -241,21 +253,47 @@
                                     data-hover>GitHub <i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <div class="work-image" data-hover>
-                            <div class="img-placeholder gradient-2">
-                                <i class="fas fa-undo-alt icon-bg"></i>
+
+                        <div class="work-image reveal-text">
+                            <div class="browser-header">
+                                <div class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="project-gallery">
+                                <div class="gallery-container" id="gallery-2">
+                                    <img src="Assets/ticket-dashboard.png" class="gallery-img"
+                                        alt="WEG Dashboard Placeholder">
+                                    <img src="Assets/ticket-admin.png" class="gallery-img" alt="WEG Admin Placeholder">
+                                </div>
+
+                                <button class="gallery-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="gallery-arrow next"><i class="fas fa-chevron-right"></i></button>
+
+                                <div class="gallery-dots" id="dots-2">
+                                    <span class="gallery-dot active"></span>
+                                    <span class="gallery-dot"></span>
+                                </div>
+
+                                <div class="gallery-hint">
+                                    <i class="fas fa-mouse-pointer"></i> <span data-i18n="gallery_hint">Deslizar</span>
+                                </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Project 3 -->
+                    <!-- Project Tickets -->
                     <article class="work-item fade-up delay-4">
                         <div class="work-info">
                             <span class="work-cat" data-i18n="prj3_cat">SaaS / Soporte Técnico</span>
                             <h3 class="work-title" data-hover data-i18n="prj3_title">Sistema de Tickets — Soporte</h3>
-                            <p class="work-desc" data-i18n="prj3_desc">Plataforma completa de gestión de soporte técnico
-                                con roles diferenciados (Admin, Operador, Usuario). Incluye chat en tiempo real, SLA
-                                tracking, dashboard de métricas y notificaciones vía email.</p>
+                            <p class="work-desc" data-i18n="prj3_desc">Plataforma B2B de alto rendimiento construida
+                                bajo <strong>Clean Architecture</strong>. Implementa micro-interacciones en tiempo real
+                                con SignalR, seguridad JWT basada en roles y una capa de persistencia optimizada con EF
+                                Core. Resolución de SLAs y arquitectura modular escalable para el sector corporativo.
+                            </p>
                             <div class="work-tech">
                                 <span><i class="fab fa-microsoft"></i> ASP.NET Core</span>
                                 <span><i class="fas fa-code"></i> C#</span>
@@ -264,6 +302,7 @@
                                 <span><i class="fas fa-code"></i> TypeScript</span>
                                 <span><i class="fas fa-shield-alt"></i> JWT</span>
                             </div>
+
                             <div class="work-links">
                                 <a href="https://ticket-system-api-iota.vercel.app/" target="_blank" class="btn-link"
                                     data-hover data-i18n="prj_see_demo">Ver Demo <i class="fas fa-arrow-right"></i></a>
@@ -313,20 +352,24 @@
         <section id="contact" class="contact section">
             <div class="container">
                 <div class="contact-wrapper fade-up">
-                    <p class="contact-subtitle" data-i18n="contact_subtitle">¿Listo para innovar?</p>
+                    <!-- CAMBIO: subtítulo más honesto y directo -->
+                    <p class="contact-subtitle" data-i18n="contact_subtitle">¿Buscás un desarrollador?</p>
                     <h2 class="contact-title" data-i18n="contact_title">Hablemos</h2>
-                    <p class="contact-desc" data-i18n="contact_desc">Busco integrarme a equipos que desafíen los
-                        límites. Si tenés un proyecto ambicioso, tengo la arquitectura para soportarlo.</p>
+                    <!-- CAMBIO: texto reescrito — honesto sobre primer rol, pero con confianza -->
+                    <p class="contact-desc" data-i18n="contact_desc">Estoy buscando mi próxima oportunidad profesional
+                        como desarrollador. Si tu equipo necesita a alguien que aprenda rápido y ya tiene proyectos
+                        reales encima, escribime.</p>
                     <div class="contact-actions">
                         <a href="mailto:chiossojulian@gmail.com?subject=Contacto%20desde%20tu%20Portfolio&body=Hola%20Julian,%20quiero%20ponerme%20en%20contacto."
-                            class="btn-large" data-hover data-i18n="contact_btn">Iniciar Conversación</a>
+                            class="btn-large" data-hover data-i18n="contact_btn">Escribime</a>
                         <a target="_blank" href="Docs/Curriculum Vitae - Chiosso Julián.pdf"
                             download="Julian-Chiosso-CV.pdf" class="btn-cv" data-hover>
                             <i class="fas fa-download"></i> <span data-i18n="contact_cv">Descargar CV</span>
                         </a>
                     </div>
-                    <p class="cv-note" data-i18n="contact_note">Disponible para contratación inmediata · Full Stack /
-                        Backend</p>
+                    <!-- CAMBIO: nota con ubicación explícita -->
+                    <p class="cv-note" data-i18n="contact_note">Disponible inmediatamente · Remoto / Presencial · San
+                        Francisco, Córdoba, AR</p>
                 </div>
                 <footer class="footer">
                     <div class="socials">
