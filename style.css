@@ -4,7 +4,28 @@
    ============================================ */
 
 :root {
-    /* Color Palette - Light (Default) */
+    /* Color Palette - Dark (Default) */
+    --bg: #0b0f1a;
+    --bg-card: #151b2d;
+    --bg-subtle: #1a2236;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-light: #64748b;
+    --accent: #3b82f6;
+    --accent-2: #6366f1;
+    --accent-light: rgba(59, 130, 246, 0.1);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(59, 130, 246, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --radius: 12px;
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
     --bg: #f8f9fc;
     --bg-card: #ffffff;
     --bg-subtle: #f0f2f7;
@@ -19,29 +40,6 @@
     --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.07), 0 1px 2px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
     --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.10), 0 4px 12px rgba(15, 23, 42, 0.05);
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Outfit', sans-serif;
-    --radius: 12px;
-    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="dark"] {
-    --bg: #0b0f1a;
-    /* Deeper, more professional dark blue/black */
-    --bg-card: #151b2d;
-    --bg-subtle: #1a2236;
-    --text: #f8fafc;
-    --text-muted: #94a3b8;
-    --text-light: #64748b;
-    --accent: #3b82f6;
-    /* Solid professional blue */
-    --accent-2: #6366f1;
-    --accent-light: rgba(59, 130, 246, 0.1);
-    --border: rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(59, 130, 246, 0.3);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* CV Style Section Headers */
@@ -78,6 +76,8 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--bg);
+    /* Keep base background solid */
 }
 
 body {
@@ -93,15 +93,19 @@ a {
     color: inherit;
 }
 
-/* Background subtle dot pattern */
+/* Background subtle dot pattern - Optimized for dark */
 body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 28px 28px;
     pointer-events: none;
     z-index: 0;
+}
+
+[data-theme="light"]::before {
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
 /* Ambient soft color blobs */
@@ -112,7 +116,7 @@ body::after {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
 }
@@ -947,28 +951,33 @@ body::after {
 .work-image {
     overflow: hidden;
     position: relative;
-    min-height: 380px;
-    background: #f8fafc;
-    /* Subtle off-white to contrast slightly with card */
-    padding: 0 !important;
+    background: var(--bg-card);
+    /* Match card background for seamless look */
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.04);
+    border: none;
+    border-radius: 8px;
+    /* Subtle radius only */
 }
 
 /* Consolidate Project Gallery & Clipping Logic */
 .project-gallery {
     position: relative;
-    width: 90%;
-    height: 82%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.gallery-container.grabbing {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    /* Disable snap while dragging for smoother feel */
 }
 
 .gallery-container {
@@ -978,6 +987,7 @@ body::after {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    cursor: grab;
     -ms-overflow-style: none;
     width: 100%;
     height: 100%;
@@ -989,20 +999,16 @@ body::after {
 
 .gallery-img {
     width: 100%;
-    min-width: 100%;
+    height: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
-    object-fit: cover;
-    clip-path: inset(2% 2% 2% 2% round 12px);
-    /* Mask baked-in glow */
-    transform: scale(1.05);
-    /* Zoom to fill space */
-    filter: brightness(1.01) contrast(1.01);
+    object-fit: contain;
+    background: transparent;
     transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .work-item:hover .gallery-img {
-    transform: scale(1.09);
+    transform: scale(1.02);
 }
 
 
@@ -1012,21 +1018,21 @@ body::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    background: rgba(15, 23, 42, 0.7);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border);
-    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: all var(--transition);
-    opacity: 0;
-    pointer-events: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    /* More visible by default */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .project-gallery:hover .gallery-arrow {
@@ -1035,8 +1041,6 @@ body::after {
 }
 
 .gallery-arrow:hover {
-    background: white;
-    color: var(--accent);
     box-shadow: var(--shadow-sm);
     transform: translateY(-50%) scale(1.1);
 }
@@ -1107,24 +1111,7 @@ body::after {
 /* Browser Window Mockup Effect */
 
 
-.browser-header {
-    background: #fafbfc;
-    /* Neutral clean top bar */
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    /* Soft line */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-}
-
 .project-gallery {
-    padding-top: 42px;
-    /* For header */
     height: 100%;
 }
 
